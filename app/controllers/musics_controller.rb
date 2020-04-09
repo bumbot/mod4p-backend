@@ -4,4 +4,11 @@ class MusicsController < ApplicationController
 
         render json: musics
     end
+
+    def show
+        music = Music.find(params[:id])
+
+
+        render json: music if music
+    end
 end

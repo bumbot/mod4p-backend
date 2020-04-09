@@ -4,4 +4,10 @@ class PlaylistsController < ApplicationController
 
         render json: playlists
     end
+
+    def show
+        playlist = Playlist.find(params[:id])
+
+        render json: playlist if playlist
+    end
 end
