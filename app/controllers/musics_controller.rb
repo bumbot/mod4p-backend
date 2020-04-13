@@ -1,4 +1,6 @@
 require 'rest-client'
+require 'nokogiri'
+require 'open-uri'
 
 class MusicsController < ApplicationController
     def index
@@ -25,8 +27,16 @@ class MusicsController < ApplicationController
         })
         
         json_body = JSON.parse(response.body)
-        puts json_body 
-        render json: json_body
+        
+        song_url = json_body["response"]["hits"][0]["result"]["url"]
+
+        doc = Nokogiri::HTML(open(song_url))
+
+        lyrics = doc.css(".lyrics").children
+
+        byebug
+        
+        render json: lyrics
 
     end 
 end
