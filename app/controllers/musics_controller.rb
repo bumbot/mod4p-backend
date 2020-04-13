@@ -14,8 +14,10 @@ class MusicsController < ApplicationController
     end
 
     def get_song 
+        song = params[:song]
+        artist = params[:artist]
         token = "-YbFQTXMw5wHgbhmz9m5_F0FqM7S8zbpW43DldPqw9JB0LzU0zplcikqnc--a6e4"
-        response = RestClient.get('https://api.genius.com/search?q=Hello%20Adele', {
+        response = RestClient.get("https://api.genius.com/search?q=#{song}%20#{artist}", {
             "User-Agent": "CompuServe Classic/1.22",
             "Accept": "application/json",
             "Host": "api.genius.com",
