@@ -10,9 +10,9 @@ User.destroy_all
 Playlist.destroy_all
 Music.destroy_all
 
-user1 = User.create(username: 'bum', lastFive: 'Adele,Beyonce,Justin Bieber,Drake,Rick Astley')
-user2 = User.create(username: 'dum', lastFive: 'Adele,Beyonce,Justin Bieber,Drake,Rick Astley')
-user3 = User.create(username: 'gum', lastFive: 'Adele,Beyonce,Justin Bieber,Drake,Rick Astley')
+user1 = User.create(username: 'bum', password: "hi", lastFive: 'Adele,Beyonce,Justin Bieber,Drake,Rick Astley')
+user2 = User.create(username: 'dum', password: "hi", lastFive: 'Adele,Beyonce,Justin Bieber,Drake,Rick Astley')
+user3 = User.create(username: 'gum', password: "hi", lastFive: 'Adele,Beyonce,Justin Bieber,Drake,Rick Astley')
 
 music1 = Music.create(songName: "Single Ladies", songArtist: "Beyonce", songAlbum: "meh", uriLink: "")
 music2 = Music.create(songName: "Hello", songArtist: "Adele", songAlbum: "eh", uriLink: "")

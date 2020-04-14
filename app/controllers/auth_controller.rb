@@ -2,7 +2,7 @@ class AuthController < ApplicationController
     def create
         user = User.find_by(username: params["username"])
 
-        if user
+        if user && user.authenticate(params["password"])
             render json: {
                 user_data: user,
                 error: false
