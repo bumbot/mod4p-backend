@@ -32,7 +32,7 @@ class MusicsController < ApplicationController
 
         doc = Nokogiri::HTML(open(song_url))
 
-        lyrics = {lyrics: doc.css(".lyrics").children[3].text}
+        lyrics = {lyrics: doc.css(".lyrics").children[3].text, website: song_url}
         
         render json: lyrics 
 
